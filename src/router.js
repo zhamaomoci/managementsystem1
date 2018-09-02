@@ -13,6 +13,10 @@ import Gallery from './pages/ui/gallery.js';
 import Carousel from './pages/ui/carousel.js';
 import FormLogin from './pages/form/login.js';
 import FormRegister from './pages/form//register.js';
+import City from './pages/city/index.js';
+import Order from './pages/order/index.js';
+import BasicTable from './pages/table/basicTable.js';
+import HighTable from './pages/table/highTable.js';
 import NoMatch from './pages/nomatch/index.js';
 export default class Router extends Component {
     render(){
@@ -32,6 +36,10 @@ export default class Router extends Component {
                             <Route path="/admin/ui/carousel" component={Carousel}></Route>
                             <Route path="/admin/form/login" component={FormLogin}></Route>
                             <Route path="/admin/form/reg" component={FormRegister}></Route>
+                            <Route path="/admin/table/basic" component={BasicTable} />
+                            <Route path="/admin/table/high" component={HighTable} />
+                            <Route path="/admin/city" component={City}></Route>
+                            <Route path="/admin/order" component={Order}></Route>
                             <Route component={NoMatch}></Route>
                             </Switch>
                         </Admin>

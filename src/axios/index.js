@@ -1,5 +1,6 @@
 import JsonP from 'jsonp';
-
+import axios from 'axios';
+import {Modal} from 'antd';
 
 export default class Axios{
     static jsonp(options){
@@ -16,5 +17,42 @@ export default class Axios{
                 }
            })
        })
+    }
+
+    static ajax(options){
+        // 加载中的loading动画
+        let loading;
+        if(options.data && options.data.isShowLoading !== false){
+            loading = document.getElementById('ajaxLoading');
+            loading.style.display = 'block';
+        }
+        // 发送请求
+        let baseApi = 'https://www.easy-mock.com/mock/5a7278e28d0c633b9c4adbd7/api';
+        return new Promise((resolve, reject)=> {
+            axios({
+                url: options.url,
+                method: 'get',
+                baseURL: baseApi,
+                params: (options.data && options.data.params) || ''
+            }).then((response)=> {
+                if(options.data && options.data.isShoeLoading !== false) {
+                    loading = document.getElementById('ajaxLoading');
+                    loading.style.display = 'none';
+                }
+                if(response.status == '200'){
+                    let res = response.data;
+                    if(res.code == '0'){
+                        resolve(res);
+                    }else{
+                        Modal.info({
+                            title: '提示',
+                            content: res.msg
+                        })
+                    }
+                }else{
+                    reject(response.data);
+                }
+            })
+        })
     }
 }
