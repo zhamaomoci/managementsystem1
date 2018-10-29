@@ -6,6 +6,7 @@ import { Record } from '../../../node_modules/immutable';
 const FormItem = Form.Item;
 const Option = Select.Option;
 
+
 export default class Order extends Component {
     state = {
         orderInfo: {},

@@ -38,6 +38,10 @@ const menuList = [
             {
                 title: '轮播图',
                 key: '/admin/ui/carousel',
+            },
+            {
+                title:'todolist',
+                key:'/admin/ui/comment',
             }
         ]
     },

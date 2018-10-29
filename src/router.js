@@ -11,6 +11,7 @@ import Message from './pages/ui/messages.js';
 import Tab from './pages/ui/tabs.js';
 import Gallery from './pages/ui/gallery.js';
 import Carousel from './pages/ui/carousel.js';
+import Comment from './pages/ui/commentApp.js';
 import FormLogin from './pages/form/login.js';
 import FormRegister from './pages/form//register.js';
 import City from './pages/city/index.js';
@@ -34,6 +35,7 @@ export default class Router extends Component {
                             <Route path="/admin/ui/gallery" component={Gallery}></Route>
                             <Route path="/admin/ui/tabs" component={Tab}></Route>
                             <Route path="/admin/ui/carousel" component={Carousel}></Route>
+                            <Route path="/admin/ui/comment" component={Comment}></Route>
                             <Route path="/admin/form/login" component={FormLogin}></Route>
                             <Route path="/admin/form/reg" component={FormRegister}></Route>
                             <Route path="/admin/table/basic" component={BasicTable} />
